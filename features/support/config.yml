@@ -1,0 +1,8 @@
+prod:
+    base_url: http://www.portplus.com/manage
+
+qa:
+    base_url: http://qa.portpdev.com/manage
+
+stage:
+    base_url: http://stage.portpdev.com/manage

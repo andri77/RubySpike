@@ -1,0 +1,65 @@
+How to setup the automation suite in windows machine:
+
+- Setup rails installer (ruby 1.9.3)  for windows (http://railsinstaller.org/en) :
+https://s3.amazonaws.com/railsinstaller/Windows/railsinstaller-2.2.3.exe --> direct download link
+This will install the following and insert the tool execution to your path:
+Ruby 1.9.3
+Rails 3.2
+Bundler
+Git
+Sqlite
+TinyTDS
+SQL Server Support
+DevKit
+
+- Download Console2 for command line tool : http://sourceforge.net/projects/console/
+This tool supports window/unix command line
+
+- Download MysGit for Windows : http://msysgit.github.io/
+This will enable unix command in Console2
+Make sure during installation that you select "Use Git and optional Unix tools from the Windows Command Prompt"
+
+-Make Sure Ruby is in your path: type "ruby -v"
+This will output: ruby 1.9.3p545 (2014-02-24) [i386-mingw32]
+
+- Install all the gems required:
+Gem install cucumber
+Gem install rake -v 0.8.7
+Gem install rspec -v 1.2.8
+Gem install capybara -v 2.3.0
+Gem install selenium-webdriver -v 2.42.0
+Gem install term-ansicolor
+Gem install capybara-webkit
+gem install debugger
+gem install colorize
+gem install chunky_png -v 1.3.1
+gem install sinatra -v 1.4.5
+gem install parallel_tests -v 1.0.0
+gem install rake -v 10.3.2
+
+- Install AnsiCon from https://github.com/adoxa/ansicon/downloads :
+Add "x86" (if your OS is 32-bit) or "x64" (if 64-bit) to your PATH, or copy the relevant files to a directory already on the PATH.
+This will give you color output for windows
+
+-Download drivers:
+IEDriver:  http://selenium-release.storage.googleapis.com/index.html
+Chrome Driver:  http://chromedriver.storage.googleapis.com/index.html
+Save the .exe files in path location
+
+-Test your setup by running this line:
+cucumber --tags=@create-client TEST_ENV=stage BROWSER=ff
+
+-Running rake scripts:
+Run "rake -P" to list all rake executable scripts, example:
+D:\projects\portplus-automation>rake -P
+rake cucumber:regression_with_retry
+rake cucumber:rerun
+rake cucumber:selenium
+rake parallel
+rake regression
+rake cucumber:regression_with_retry will run regression suite with 1 time retry of the failing tests.
+
+
+
+
+
